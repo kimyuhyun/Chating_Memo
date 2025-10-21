@@ -46,7 +46,7 @@ signing.properties
 .navigation/
 
 # Android Studio captures folder
-screenshot/
+
 
 # IntelliJ
 *.iml
@@ -112,4 +112,8 @@ Desktop.ini
 firebase-debug.log
 firebase-debug.*.log
 
-./app/google-services.json
+
+# kyh 추가
+app/google-services.json
+private_key.pepk
+screenshot/
