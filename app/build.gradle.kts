@@ -40,6 +40,7 @@ android {
         // local.properties에서 값 읽어오기
         buildConfigField("long", "KEY", localProperties.getProperty("KEY", "0"))
         buildConfigField("String", "CLOUD_NAME", "\"${localProperties.getProperty("CLOUD_NAME", "")}\"")
+        buildConfigField("String", "UPLOAD_PRESET", "\"${localProperties.getProperty("UPLOAD_PRESET", "")}\"")
         buildConfigField("String", "API_KEY", "\"${localProperties.getProperty("API_KEY", "")}\"")
         buildConfigField("String", "API_SECRET", "\"${localProperties.getProperty("API_SECRET", "")}\"")
     }

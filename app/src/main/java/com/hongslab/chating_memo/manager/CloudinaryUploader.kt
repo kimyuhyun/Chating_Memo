@@ -27,7 +27,7 @@ class CloudinaryUploader(private val activity: ComponentActivity) {
 
     companion object {
         private var CLOUD_NAME = MyUtils.decrypt(BuildConfig.CLOUD_NAME)
-        private const val UPLOAD_PRESET = "mzbjpjdi"
+        private const val UPLOAD_PRESET = BuildConfig.UPLOAD_PRESET
         private const val FOLDER = "memo_app"
         private const val MAX_IMAGES = 10
     }
