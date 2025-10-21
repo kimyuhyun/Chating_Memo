@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <variable
+            name="click"
+            type="View.OnClickListener" />
+
+
+    </data>
+
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        app:cardBackgroundColor="@color/tertiarySystemBackground"
+        app:cardCornerRadius="10dp"
+        app:cardElevation="0dp">
+
+        <LinearLayout
+            android:layout_width="240dp"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingTop="0dp">
+
+            <com.hongslab.chating_memo.utils.KyhTextButton
+                android:id="@+id/btn_notice"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:gravity="center"
+                android:onClick="@{click::onClick}"
+                android:text="공지"
+                android:textColor="@color/systemGreen"
+                android:textSize="16sp"
+                app:radius="0" />
+
+            <com.hongslab.chating_memo.utils.KyhTextButton
+                android:id="@+id/btn_merge_memo"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:gravity="center"
+                android:onClick="@{click::onClick}"
+                android:paddingHorizontal="20dp"
+                android:text="메모 합치기"
+                android:textColor="@color/label"
+                android:textSize="16sp"
+                app:radius="0" />
+
+            <com.hongslab.chating_memo.utils.KyhTextButton
+                android:id="@+id/btn_copy"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:gravity="center"
+                android:onClick="@{click::onClick}"
+                android:paddingHorizontal="20dp"
+                android:text="복사"
+                android:textColor="@color/label"
+                android:textSize="16sp"
+                app:radius="0" />
+
+
+            <com.hongslab.chating_memo.utils.KyhTextButton
+                android:id="@+id/btn_select_copy"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:gravity="center"
+                android:onClick="@{click::onClick}"
+                android:paddingHorizontal="20dp"
+                android:text="선택복사"
+                android:textColor="@color/label"
+                android:textSize="16sp"
+                app:radius="0" />
+
+
+            <com.hongslab.chating_memo.utils.KyhTextButton
+                android:id="@+id/btn_completed"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:gravity="center"
+                android:onClick="@{click::onClick}"
+                android:paddingHorizontal="20dp"
+                android:text="완료"
+                android:textColor="@color/label"
+                android:textSize="16sp"
+                app:radius="0" />
+
+            <com.hongslab.chating_memo.utils.KyhTextButton
+                android:id="@+id/btn_completed_cancel"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:gravity="center"
+                android:onClick="@{click::onClick}"
+                android:paddingHorizontal="20dp"
+                android:text="완료 취소"
+                android:textColor="@color/label"
+                android:textSize="16sp"
+                app:radius="0" />
+
+            <com.hongslab.chating_memo.utils.KyhTextButton
+                android:id="@+id/btn_goto_bottom"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:gravity="center"
+                android:onClick="@{click::onClick}"
+                android:paddingHorizontal="20dp"
+                android:text="최하단으로 내리기"
+                android:textColor="@color/label"
+                android:textSize="16sp"
+                app:radius="0" />
+
+
+            <com.hongslab.chating_memo.utils.KyhTextButton
+                android:id="@+id/btn_delete"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:gravity="center"
+                android:onClick="@{click::onClick}"
+                android:paddingHorizontal="20dp"
+                android:text="삭제"
+                android:textColor="@color/systemRed"
+                android:textSize="16sp"
+                app:radius="0" />
+        </LinearLayout>
+
+    </androidx.cardview.widget.CardView>
+</layout>
+

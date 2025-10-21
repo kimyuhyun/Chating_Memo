@@ -1,0 +1,289 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <variable
+            name="click"
+            type="View.OnClickListener" />
+
+        <variable
+            name="vm"
+            type="com.hongslab.chating_memo.viewmodels.ChatMessageViewModel" />
+
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/systemGroupedBackground">
+
+        <com.hongslab.chating_memo.utils.UnderlinedLinearLayout
+            android:id="@+id/tool_bar"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_alignParentTop="true"
+            android:background="@color/secondarySystemGroupedBackground"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            app:underlineStrokeWidth="0px">
+
+            <com.hongslab.chating_memo.utils.KyhImageButton
+                android:id="@+id/btn_back"
+                android:layout_width="50dp"
+                android:layout_height="match_parent"
+                android:onClick="@{click::onClick}"
+                android:scaleType="center"
+                android:src="@drawable/ic_arrow_left"
+                app:tint="@color/label" />
+
+            <TextView
+                android:id="@+id/tv_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="분류"
+                android:textColor="@color/label"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+            <FrameLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1" />
+
+            <com.hongslab.chating_memo.utils.KyhImageButton
+                android:id="@+id/btn_search"
+                android:layout_width="50dp"
+                android:layout_height="match_parent"
+                android:onClick="@{click::onClick}"
+                android:padding="14dp"
+                android:scaleType="fitCenter"
+                android:src="@drawable/ic_magnifying_glass"
+                app:tint="@color/label" />
+
+        </com.hongslab.chating_memo.utils.UnderlinedLinearLayout>
+
+        <FrameLayout
+            android:id="@+id/ad_bottom_container"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tool_bar"
+            android:background="@color/systemBackground" />
+
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recycler_view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_above="@id/ll_input_box"
+            android:layout_below="@id/ad_bottom_container"
+            android:orientation="vertical" />
+
+        <include
+            android:id="@+id/include_notice_message"
+            layout="@layout/include_notice_message"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/ad_bottom_container" />
+
+
+        <LinearLayout
+            android:id="@+id/ll_parent_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/ll_input_box"
+            android:background="@color/systemBackground"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:paddingHorizontal="10dp"
+            android:paddingVertical="10dp"
+            android:visibility="gone">
+
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                app:cardBackgroundColor="@color/systemBackground"
+                app:cardCornerRadius="15dp"
+                app:cardElevation="0dp"
+                app:strokeColor="@color/systemGray3"
+                app:strokeWidth="1dp">
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:padding="8dp"
+                    android:scaleType="fitCenter"
+                    android:src="@drawable/ic_arrow_elbow_down_right"
+                    app:tint="@color/label" />
+
+            </com.google.android.material.card.MaterialCardView>
+
+            <TextView
+                android:id="@+id/tv_parent_text"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="6dp"
+                android:layout_weight="1"
+                android:ellipsize="end"
+                android:maxLines="2"
+                android:text="parent_text"
+                android:textColor="@color/label"
+                android:textSize="14sp" />
+
+            <com.hongslab.chating_memo.utils.KyhImageButton
+                android:id="@+id/btn_parent_text_hide"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:onClick="@{click::onClick}"
+                android:scaleType="fitCenter"
+                android:src="@drawable/ic_x"
+                app:tint="@color/label" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/ll_input_box"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:background="@color/systemBackground"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:paddingHorizontal="8dp"
+            android:paddingVertical="8dp">
+
+            <com.hongslab.chating_memo.utils.KyhImageButton
+                android:id="@+id/btn_image_upload"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:background="@color/secondarySystemBackground"
+                android:onClick="@{click::onClick}"
+                android:padding="2dp"
+                android:scaleType="fitCenter"
+                android:src="@drawable/ic_round_add_24"
+                app:tint="@color/label" />
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="8dp"
+                android:layout_weight="1"
+                app:cardBackgroundColor="@color/secondarySystemBackground"
+                app:cardCornerRadius="18dp"
+                app:cardElevation="0dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+
+                    <EditText
+                        android:id="@+id/et_message"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:background="@null"
+                        android:hint="메시지 입력"
+                        android:maxLines="7"
+                        android:minHeight="36dp"
+                        android:paddingHorizontal="16dp"
+                        android:textColor="@color/label"
+                        android:textColorHint="@color/systemGray"
+                        android:textSize="16sp" />
+
+                    <com.hongslab.chating_memo.utils.KyhImageButton
+                        android:id="@+id/btn_imoji"
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        android:layout_marginRight="8dp"
+                        android:background="@color/systemGray3"
+                        android:onClick="@{click::onClick}"
+                        android:padding="6dp"
+                        android:scaleType="fitCenter"
+                        android:src="@drawable/ic_imoji"
+                        app:tint="@color/label" />
+
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+
+            <com.hongslab.chating_memo.utils.KyhImageButton
+                android:id="@+id/btn_send"
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:layout_marginLeft="4dp"
+                android:background="@color/chatMeBubbleBackground"
+                android:onClick="@{click::onClick}"
+                android:paddingLeft="8dp"
+                android:paddingRight="4dp"
+                android:scaleType="fitCenter"
+                android:src="@drawable/ic_send_24"
+                app:tint="@color/black" />
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:id="@+id/ll_merge_btn_box"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_alignParentBottom="true"
+            android:orientation="horizontal"
+            android:visibility="gone">
+
+            <com.hongslab.chating_memo.utils.KyhTextButton
+                android:id="@+id/btn_merge_memo_cancel"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="2"
+                android:background="@color/systemRed"
+                android:gravity="center"
+                android:onClick="@{click::onClick}"
+                android:text="취소"
+                android:textColor="@color/white"
+                android:textSize="16sp"
+                app:radius="0" />
+
+            <com.hongslab.chating_memo.utils.KyhTextButton
+                android:id="@+id/btn_merge_memo"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="8"
+                android:background="@color/systemBlue"
+                android:gravity="center"
+                android:onClick="@{click::onClick}"
+                android:text="체크된 메모 합치기"
+                android:textColor="@color/white"
+                android:textSize="16sp"
+                app:radius="0" />
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:id="@+id/ll_loading"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@android:color/transparent"
+            android:clickable="true"
+            android:elevation="10dp"
+            android:focusable="true"
+            android:gravity="center"
+            android:visibility="gone">
+
+            <ImageView
+                android:layout_width="300dp"
+                android:layout_height="300dp"
+                android:scaleType="fitCenter"
+                android:src="@drawable/progress_animation" />
+
+        </LinearLayout>
+
+
+    </RelativeLayout>
+
+
+</layout>

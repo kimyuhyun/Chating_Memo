@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <variable
+            name="click"
+            type="View.OnClickListener" />
+
+        <variable
+            name="vm"
+            type="com.hongslab.chating_memo.viewmodels.ChatMessageViewModel" />
+
+    </data>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            app:cardBackgroundColor="@color/tertiarySystemBackground"
+            app:cardCornerRadius="6dp"
+            app:cardElevation="0dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="12dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="top"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:layout_width="16dp"
+                        android:layout_height="16dp"
+                        android:layout_marginTop="3dp"
+                        android:layout_marginRight="10dp"
+                        android:scaleType="fitCenter"
+                        android:src="@drawable/ic_notice"
+                        app:tint="@color/systemBlue" />
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="2dp"
+                            android:lineSpacingExtra="4dp"
+                            android:text="공지입니다.\n공지입니다."
+                            android:textColor="@color/label"
+                            android:textSize="14sp"
+                            app:setNoticeText="@{vm.noticeTextStateItem}" />
+
+                    </LinearLayout>
+
+
+                    <com.hongslab.chating_memo.utils.KyhImageButton
+                        android:id="@+id/btn_expand"
+                        android:layout_width="21dp"
+                        android:layout_height="21dp"
+                        android:onClick="@{click::onClick}"
+                        android:scaleType="center"
+                        android:src="@drawable/ic_round_keyboard_arrow_up_24"
+                        app:setImageRes="@{vm.noticeTextStateItem.isExpand ? @drawable/ic_round_keyboard_arrow_up_24 : @drawable/ic_round_keyboard_arrow_down_24}"
+                        app:tint="@color/label" />
+
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:orientation="horizontal"
+                    android:visibility="@{vm.noticeTextStateItem.isExpand ? View.VISIBLE : View.GONE}">
+
+                    <com.hongslab.chating_memo.utils.KyhTextButton
+                        android:id="@+id/btn_notice_delete"
+                        android:layout_width="0dp"
+                        android:layout_height="40dp"
+                        android:layout_weight="1"
+                        android:background="@color/chatNoticeButtonBackground"
+                        android:gravity="center"
+                        android:onClick="@{click::onClick}"
+                        android:text="다시 열지 않음"
+                        android:textColor="@color/label"
+                        app:radius="6" />
+
+                    <com.hongslab.chating_memo.utils.KyhTextButton
+                        android:id="@+id/btn_expand2"
+                        android:layout_width="0dp"
+                        android:layout_height="40dp"
+                        android:layout_marginLeft="10dp"
+                        android:layout_weight="1"
+                        android:background="@color/chatNoticeButtonBackground"
+                        android:gravity="center"
+                        android:onClick="@{click::onClick}"
+                        android:text="접어두기"
+                        android:textColor="@color/label"
+                        app:radius="6" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+
+        </androidx.cardview.widget.CardView>
+
+
+    </LinearLayout>
+</layout>

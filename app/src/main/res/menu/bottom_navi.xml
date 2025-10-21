@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/action_cate"
+        android:icon="@drawable/ic_folder"
+        android:title="분류" />
+
+    <item
+        android:id="@+id/action_chat"
+        android:icon="@drawable/ic_chat_circle"
+        android:title="메모" />
+
+
+    <item
+        android:id="@+id/action_more"
+        android:icon="@drawable/ic_dots_three_outline"
+        android:title="더보기" />
+
+</menu>

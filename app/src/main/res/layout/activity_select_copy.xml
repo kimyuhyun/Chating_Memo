@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <variable
+            name="click"
+            type="View.OnClickListener" />
+
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/systemGroupedBackground">
+
+        <com.hongslab.chating_memo.utils.UnderlinedLinearLayout
+            android:id="@+id/tool_bar"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_alignParentTop="true"
+            android:background="@color/secondarySystemGroupedBackground"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            app:underlineStrokeWidth="0px">
+
+            <com.hongslab.chating_memo.utils.KyhImageButton
+                android:id="@+id/btn_back"
+                android:layout_width="50dp"
+                android:layout_height="match_parent"
+                android:onClick="@{click::onClick}"
+                android:scaleType="center"
+                android:src="@drawable/ic_arrow_left"
+                app:tint="@color/label" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="선택복사"
+                android:textColor="@color/label"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+            <FrameLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1" />
+
+
+        </com.hongslab.chating_memo.utils.UnderlinedLinearLayout>
+
+
+        <TextView
+            android:id="@+id/tv_message"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_above="@id/ad_bottom_container"
+            android:layout_below="@id/tool_bar"
+            android:padding="20dp"
+            android:textColor="@color/label"
+            android:textIsSelectable="true"
+            android:textSize="16sp" />
+
+
+        <FrameLayout
+            android:id="@+id/ad_bottom_container"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true" />
+
+    </RelativeLayout>
+
+
+</layout>

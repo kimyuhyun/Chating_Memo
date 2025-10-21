@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <variable
+            name="click"
+            type="View.OnClickListener" />
+
+        <variable
+            name="vm"
+            type="com.hongslab.chating_memo.viewmodels.CateViewModel" />
+
+        <variable
+            name="itemClick"
+            type="com.hongslab.chating_memo.adapter.OnGlobalAdapterClickListener" />
+
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/systemBackground">
+
+        <com.hongslab.chating_memo.utils.UnderlinedLinearLayout
+            android:id="@+id/tool_bar"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_alignParentTop="true"
+            android:background="@color/secondarySystemGroupedBackground"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            app:underlineStrokeWidth="0px">
+
+            <com.hongslab.chating_memo.utils.KyhImageButton
+                android:id="@+id/btn_back"
+                android:layout_width="50dp"
+                android:layout_height="match_parent"
+                android:onClick="@{click::onClick}"
+                android:scaleType="center"
+                android:src="@drawable/ic_arrow_left"
+                app:tint="@color/label" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="폰트 사이즈 설정"
+                android:textColor="@color/label"
+                android:textSize="20sp" />
+
+            <FrameLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1" />
+
+        </com.hongslab.chating_memo.utils.UnderlinedLinearLayout>
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_above="@+id/ad_bottom_container"
+            android:layout_below="@+id/tool_bar">
+
+            <FrameLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginHorizontal="20dp">
+
+                <ImageView
+                    android:layout_width="22dp"
+                    android:layout_height="22dp"
+                    android:layout_gravity="right"
+                    android:src="@drawable/me_bubble_tail" />
+
+                <TextView
+                    android:id="@+id/tv_message"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="0dp"
+                    android:background="@drawable/round_me_bubble"
+                    android:lineSpacingExtra="4dp"
+                    android:paddingVertical="7dp"
+                    android:paddingLeft="12dp"
+                    android:paddingRight="12dp"
+                    android:text="메모 폰트 사이즈"
+                    android:textColor="@color/black"
+                    android:textSize="15sp" />
+            </FrameLayout>
+
+            <com.google.android.material.slider.Slider
+                android:id="@+id/slider"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="bottom"
+
+                android:layout_marginHorizontal="20dp"
+                android:layout_marginBottom="100dp"
+                android:stepSize="1"
+                android:valueFrom="10"
+                android:valueTo="50"
+                app:haloColor="@color/systemPurple"
+                app:haloRadius="24dp"
+                app:labelBehavior="gone"
+                app:thumbColor="@color/systemPurple"
+                app:thumbRadius="12dp"
+                app:tickVisible="false"
+                app:trackColorActive="@color/systemPurple"
+                app:trackColorInactive="@color/systemGray3"
+                app:trackHeight="4dp" />
+
+
+        </FrameLayout>
+
+        <FrameLayout
+            android:id="@+id/ad_bottom_container"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true" />
+
+    </RelativeLayout>
+
+
+</layout>

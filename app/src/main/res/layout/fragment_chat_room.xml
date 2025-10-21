@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <variable
+            name="click"
+            type="View.OnClickListener" />
+
+        <variable
+            name="vm"
+            type="com.hongslab.chating_memo.viewmodels.ChatRoomViewModel" />
+
+        <variable
+            name="itemClick"
+            type="com.hongslab.chating_memo.adapter.OnGlobalAdapterClickListener" />
+
+    </data>
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/systemGroupedBackground">
+
+        <com.hongslab.chating_memo.utils.UnderlinedLinearLayout
+            android:id="@+id/tool_bar"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_alignParentTop="true"
+            android:background="@color/secondarySystemGroupedBackground"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            app:underlineStrokeWidth="0px">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:text="메모"
+                android:textColor="@color/label"
+                android:textSize="20sp" />
+
+        </com.hongslab.chating_memo.utils.UnderlinedLinearLayout>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recycler_view"
+            A_head="@{@layout/chat_room_head}"
+            B_body="@{@layout/chat_room_item}"
+            C_foot="@{@layout/chat_room_foot}"
+            click="@{itemClick}"
+            list="@{vm.items}"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tool_bar"
+            android:layout_alignParentBottom="true"
+            android:orientation="vertical"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:gravity="center"
+            android:text="분류 탭에서 분류를 선택 후 메모를 추가 주세요."
+            android:textColor="@color/systemGray"
+            android:visibility="@{vm.items.size() == 0 ? View.VISIBLE : View.GONE}" />
+
+    </RelativeLayout>
+
+</layout>

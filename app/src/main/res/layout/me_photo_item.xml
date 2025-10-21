@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/systemGroupedBackground"
+        android:paddingHorizontal="5dp"
+        android:paddingVertical="10dp">
+
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="right"
+            android:orientation="horizontal">
+
+            <RelativeLayout
+                android:layout_width="50dp"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="0dp"
+                android:layout_marginRight="4dp">
+
+                <!-- 모어 버튼 -->
+                <com.hongslab.chating_memo.utils.KyhImageButton
+                    android:id="@+id/btn_image_more"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_centerInParent="true"
+                    android:background="@color/systemGray5"
+                    android:padding="4dp"
+                    android:scaleType="fitCenter"
+                    android:src="@drawable/ic_dots_three_outline"
+                    app:radius="10" />
+
+
+                <TextView
+                    android:id="@+id/tv_time_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_alignParentBottom="true"
+                    android:text="오후 11:00"
+                    android:textColor="@color/systemGray"
+                    android:textSize="10sp" />
+            </RelativeLayout>
+
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/image_container"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:clickable="true"
+                android:focusable="true"
+                android:foreground="?android:attr/selectableItemBackgroundBorderless"
+                android:minWidth="100dp"
+                android:minHeight="100dp"
+                app:cardCornerRadius="6dp"
+                app:cardElevation="0dp"
+                app:strokeColor="@color/white"
+                app:strokeWidth="1dp" />
+
+
+        </LinearLayout>
+
+    </FrameLayout>
+</layout>

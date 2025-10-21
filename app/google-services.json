@@ -1,0 +1,212 @@
+{
+  "project_info": {
+    "project_number": "1006069588078",
+    "firebase_url": "https://hongslab-28004.firebaseio.com",
+    "project_id": "hongslab-28004",
+    "storage_bucket": "hongslab-28004.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1006069588078:android:b78bf74278beb4072d067f",
+        "android_client_info": {
+          "package_name": "com.hongslab.chating_memo"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1006069588078-8ncotc1959c5us72u1pcnt7gvvksmcs9.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.hongslab.chating_memo",
+            "certificate_hash": "b0ef890b59720bf5ef0d6d64359282a461117f19"
+          }
+        },
+        {
+          "client_id": "1006069588078-n78nlhe58b9rekhf36fusek62ca6ber2.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.hongslab.chating_memo",
+            "certificate_hash": "4953b53cd455924ebead92318b5f72a94568d264"
+          }
+        },
+        {
+          "client_id": "1006069588078-nir414jsvg277s5cj5isunrvr2jafh8k.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDqo1kxX8F8GbTEoWMszrrNk7YuNfHFzRs"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1006069588078-nir414jsvg277s5cj5isunrvr2jafh8k.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1006069588078:android:0ad538b77d20b8502d067f",
+        "android_client_info": {
+          "package_name": "com.hongslab.mynote"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1006069588078-2vc1r0f5jiogl19vacqp2v5he0mvf1ju.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.hongslab.mynote",
+            "certificate_hash": "4953b53cd455924ebead92318b5f72a94568d264"
+          }
+        },
+        {
+          "client_id": "1006069588078-vaplvaru2t710s7462clotghqguet392.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.hongslab.mynote",
+            "certificate_hash": "6f76dbae5ba933aa0a22ad79f0b2c5789c20e1b3"
+          }
+        },
+        {
+          "client_id": "1006069588078-nir414jsvg277s5cj5isunrvr2jafh8k.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDqo1kxX8F8GbTEoWMszrrNk7YuNfHFzRs"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1006069588078-nir414jsvg277s5cj5isunrvr2jafh8k.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1006069588078:android:45027525900508832d067f",
+        "android_client_info": {
+          "package_name": "com.hongslab.onemindoc"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1006069588078-nqb8uu3gi3bja5gi0pbq10qg95km2bbi.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.hongslab.onemindoc",
+            "certificate_hash": "4953b53cd455924ebead92318b5f72a94568d264"
+          }
+        },
+        {
+          "client_id": "1006069588078-nir414jsvg277s5cj5isunrvr2jafh8k.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDqo1kxX8F8GbTEoWMszrrNk7YuNfHFzRs"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1006069588078-nir414jsvg277s5cj5isunrvr2jafh8k.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1006069588078:android:dda5fd2d1a4b0bf52d067f",
+        "android_client_info": {
+          "package_name": "com.hongslab.pyeonstorang"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1006069588078-3tl5768fl9emutdm35pbaitvpvapug0g.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.hongslab.pyeonstorang",
+            "certificate_hash": "4953b53cd455924ebead92318b5f72a94568d264"
+          }
+        },
+        {
+          "client_id": "1006069588078-nir414jsvg277s5cj5isunrvr2jafh8k.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDqo1kxX8F8GbTEoWMszrrNk7YuNfHFzRs"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1006069588078-nir414jsvg277s5cj5isunrvr2jafh8k.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1006069588078:android:05f7f2a4bb879e6f2d067f",
+        "android_client_info": {
+          "package_name": "net.hongslab.soomi_rcp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1006069588078-ufrn6nkfadpfhepjl35njh8t1o64mltg.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "net.hongslab.soomi_rcp",
+            "certificate_hash": "4953b53cd455924ebead92318b5f72a94568d264"
+          }
+        },
+        {
+          "client_id": "1006069588078-nir414jsvg277s5cj5isunrvr2jafh8k.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDqo1kxX8F8GbTEoWMszrrNk7YuNfHFzRs"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1006069588078-nir414jsvg277s5cj5isunrvr2jafh8k.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

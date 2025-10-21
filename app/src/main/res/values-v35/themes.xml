@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="AppTheme" parent="Theme.MaterialComponents.DayNight">
+        <item name="colorPrimary">@color/systemBlue</item>
+        <item name="colorPrimaryDark">@color/white</item>
+        <item name="colorAccent">@color/systemBlue</item>
+
+        <!-- 툴바 히든 -->
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+
+        <!-- Status bar color. -->
+        <item name="android:statusBarColor">@color/secondarySystemGroupedBackground</item>
+        <item name="android:windowLightStatusBar">true</item>
+
+        <!-- Navi bar color. -->
+        <item name="android:navigationBarColor">@color/secondarySystemGroupedBackground</item>
+        <item name="android:windowLightNavigationBar">false</item>
+
+
+        <!-- 터치시 물결 색상 -->
+        <item name="colorControlHighlight">#AAA</item>
+
+        <!-- Edittext 밑줄색상, 하일라이트, -->
+        <item name="colorControlNormal">@color/label</item>
+        <item name="colorControlActivated">@color/label</item>
+
+        <!-- Android 15에서 기존 동작 유지 -->
+        <item name="android:windowOptOutEdgeToEdgeEnforcement">true</item>
+
+        <item name="fontFamily">@font/suite_medium</item>
+        <item name="android:includeFontPadding">true</item>
+
+    </style>
+</resources>

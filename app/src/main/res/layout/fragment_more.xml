@@ -1,0 +1,351 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <variable
+            name="click"
+            type="View.OnClickListener" />
+
+
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/systemGroupedBackground">
+
+        <com.hongslab.chating_memo.utils.UnderlinedLinearLayout
+            android:id="@+id/tool_bar"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_alignParentTop="true"
+            android:background="@color/secondarySystemGroupedBackground"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:text="더보기"
+                android:textColor="@color/label"
+                android:textSize="20sp" />
+
+        </com.hongslab.chating_memo.utils.UnderlinedLinearLayout>
+
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@id/tool_bar">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:background="@color/secondarySystemGroupedBackground"
+                android:orientation="vertical">
+
+                <FrameLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="1px"
+                    android:background="@color/systemGray3" />
+
+                <com.hongslab.chating_memo.utils.UnderlinedLinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:background="@color/secondarySystemGroupedBackground"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:foreground="?android:attr/selectableItemBackgroundBorderless"
+                    android:gravity="center_vertical"
+                    android:onClick="@{click::onClick}"
+                    android:orientation="horizontal"
+                    app:lineLeftMargin="20dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="20dp"
+                        android:drawableLeft="@drawable/ic_moon_stars"
+                        android:drawablePadding="10dp"
+                        android:drawableTint="@color/label"
+                        android:gravity="center_vertical"
+                        android:text="테마설정"
+                        android:textColor="@color/label"
+                        android:textSize="16sp" />
+
+
+                    <com.google.android.material.card.MaterialCardView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginRight="10dp"
+                        android:layout_weight="1"
+                        android:gravity="center_vertical"
+                        app:cardBackgroundColor="@color/systemGroupedBackground"
+                        app:cardCornerRadius="6dp"
+                        app:cardElevation="0dp"
+                        app:strokeColor="@color/systemGroupedBackground"
+                        app:strokeWidth="2dp">
+
+                        <com.google.android.material.tabs.TabLayout
+                            android:id="@+id/tab_layout"
+                            android:layout_width="match_parent"
+                            android:layout_height="36dp"
+                            android:background="@color/systemGroupedBackground"
+                            app:tabIndicator="@drawable/ios_tab_indicator"
+                            app:tabIndicatorColor="@color/tertiarySystemBackground"
+                            app:tabIndicatorFullWidth="true"
+                            app:tabIndicatorGravity="stretch"
+                            app:tabMode="fixed"
+                            app:tabRippleColor="@null"
+                            app:tabSelectedTextColor="@color/label"
+                            app:tabTextColor="@color/systemGray">
+
+                            <com.google.android.material.tabs.TabItem
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="라이트" />
+
+                            <com.google.android.material.tabs.TabItem
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="다크" />
+
+                            <com.google.android.material.tabs.TabItem
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="시스템설정" />
+                        </com.google.android.material.tabs.TabLayout>
+
+                    </com.google.android.material.card.MaterialCardView>
+
+
+                </com.hongslab.chating_memo.utils.UnderlinedLinearLayout>
+
+                <com.hongslab.chating_memo.utils.UnderlinedLinearLayout
+                    android:id="@+id/btn_font_size_setting"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:background="@color/secondarySystemGroupedBackground"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:foreground="?android:attr/selectableItemBackgroundBorderless"
+                    android:gravity="center_vertical"
+                    android:onClick="@{click::onClick}"
+                    android:orientation="horizontal"
+                    app:lineLeftMargin="20dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="20dp"
+                        android:drawableLeft="@drawable/ic_text_aa"
+                        android:drawablePadding="10dp"
+                        android:drawableTint="@color/label"
+                        android:gravity="center_vertical"
+                        android:text="폰트사이즈 설정"
+                        android:textColor="@color/label"
+                        android:textSize="16sp" />
+
+                </com.hongslab.chating_memo.utils.UnderlinedLinearLayout>
+
+                <com.hongslab.chating_memo.utils.UnderlinedLinearLayout
+                    android:id="@+id/btn_share"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:background="@color/secondarySystemGroupedBackground"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:foreground="?android:attr/selectableItemBackgroundBorderless"
+                    android:gravity="center_vertical"
+                    android:onClick="@{click::onClick}"
+                    android:orientation="horizontal"
+                    app:lineLeftMargin="20dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="20dp"
+                        android:drawableLeft="@drawable/ic_export"
+                        android:drawablePadding="10dp"
+                        android:drawableTint="@color/label"
+                        android:gravity="center_vertical"
+                        android:text="공유하기"
+                        android:textColor="@color/label"
+                        android:textSize="16sp" />
+
+                </com.hongslab.chating_memo.utils.UnderlinedLinearLayout>
+
+                <com.hongslab.chating_memo.utils.UnderlinedLinearLayout
+                    android:id="@+id/btn_review"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:background="@color/secondarySystemGroupedBackground"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:foreground="?android:attr/selectableItemBackgroundBorderless"
+                    android:gravity="center_vertical"
+                    android:onClick="@{click::onClick}"
+                    android:orientation="horizontal"
+                    app:lineLeftMargin="20dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="20dp"
+                        android:drawableLeft="@drawable/ic_star"
+                        android:drawablePadding="10dp"
+                        android:drawableTint="@color/label"
+                        android:gravity="center_vertical"
+                        android:text="리뷰쓰기"
+                        android:textColor="@color/label"
+                        android:textSize="16sp" />
+
+                </com.hongslab.chating_memo.utils.UnderlinedLinearLayout>
+
+                <com.hongslab.chating_memo.utils.UnderlinedLinearLayout
+                    android:id="@+id/btn_use_terms"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:background="@color/secondarySystemGroupedBackground"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:foreground="?android:attr/selectableItemBackgroundBorderless"
+                    android:gravity="center_vertical"
+                    android:onClick="@{click::onClick}"
+                    android:orientation="horizontal"
+                    app:lineLeftMargin="20dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="20dp"
+                        android:drawableLeft="@drawable/ic_book"
+                        android:drawablePadding="10dp"
+                        android:drawableTint="@color/label"
+                        android:gravity="center_vertical"
+                        android:text="이용약관"
+                        android:textColor="@color/label"
+                        android:textSize="16sp" />
+
+                </com.hongslab.chating_memo.utils.UnderlinedLinearLayout>
+
+                <com.hongslab.chating_memo.utils.UnderlinedLinearLayout
+                    android:id="@+id/btn_policy"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:background="@color/secondarySystemGroupedBackground"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:foreground="?android:attr/selectableItemBackgroundBorderless"
+                    android:gravity="center_vertical"
+                    android:onClick="@{click::onClick}"
+                    android:orientation="horizontal"
+                    app:lineLeftMargin="20dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="20dp"
+                        android:drawableLeft="@drawable/ic_user_focus"
+                        android:drawablePadding="10dp"
+                        android:drawableTint="@color/label"
+                        android:gravity="center_vertical"
+                        android:text="개인정보처리방침"
+                        android:textColor="@color/label"
+                        android:textSize="16sp" />
+
+                </com.hongslab.chating_memo.utils.UnderlinedLinearLayout>
+
+                <com.hongslab.chating_memo.utils.UnderlinedLinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:background="@color/secondarySystemGroupedBackground"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    app:lineLeftMargin="20dp">
+
+                    <TextView
+                        android:id="@+id/tv_ver"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="20dp"
+                        android:drawableLeft="@drawable/ic_info"
+                        android:drawablePadding="10dp"
+                        android:drawableTint="@color/label"
+                        android:gravity="center_vertical"
+                        android:text="앱버전 App V1.0"
+                        android:textColor="@color/label"
+                        android:textSize="16sp" />
+
+                </com.hongslab.chating_memo.utils.UnderlinedLinearLayout>
+
+                <com.hongslab.chating_memo.utils.UnderlinedLinearLayout
+                    android:id="@+id/btn_logout"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:background="@color/secondarySystemGroupedBackground"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:foreground="?android:attr/selectableItemBackgroundBorderless"
+                    android:gravity="center_vertical"
+                    android:onClick="@{click::onClick}"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="20dp"
+                        android:drawableLeft="@drawable/ic_sign_out"
+                        android:drawablePadding="10dp"
+                        android:drawableTint="@color/label"
+                        android:gravity="center_vertical"
+                        android:text="로그아웃"
+                        android:textColor="@color/label"
+                        android:textSize="16sp" />
+
+                </com.hongslab.chating_memo.utils.UnderlinedLinearLayout>
+
+                <TextView
+                    android:id="@+id/btn_leave"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/systemGroupedBackground"
+                    android:gravity="right"
+                    android:onClick="@{click::onClick}"
+                    android:padding="20dp"
+                    android:text="계정삭제"
+                    android:textColor="@color/systemGray"
+                    android:textSize="12sp" />
+            </LinearLayout>
+        </androidx.core.widget.NestedScrollView>
+
+
+        <LinearLayout
+            android:id="@+id/ll_loading"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@android:color/transparent"
+            android:clickable="true"
+            android:elevation="10dp"
+            android:focusable="true"
+            android:gravity="center"
+            android:visibility="gone">
+
+            <ImageView
+                android:layout_width="300dp"
+                android:layout_height="300dp"
+                android:scaleType="fitCenter"
+                android:src="@drawable/progress_animation" />
+
+        </LinearLayout>
+
+    </RelativeLayout>
+
+
+</layout>

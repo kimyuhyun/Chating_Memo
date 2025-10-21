@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <variable
+            name="click"
+            type="View.OnClickListener" />
+
+        <variable
+            name="model"
+            type="com.hongslab.chating_memo.models.ImageVO" />
+
+        <variable
+            name="itemClick"
+            type="com.hongslab.chating_memo.adapter.OnGlobalAdapterClickListener" />
+
+    </data>
+
+    <com.davemorrissey.labs.subscaleview.SubsamplingScaleImageView
+        app:setSubsamplingScaleImageView="@{model.url}"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentBottom="true" />
+</layout>

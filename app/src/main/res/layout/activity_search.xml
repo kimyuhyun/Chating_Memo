@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <variable
+            name="click"
+            type="View.OnClickListener" />
+
+        <variable
+            name="vm"
+            type="com.hongslab.chating_memo.viewmodels.SearchViewModel" />
+
+        <variable
+            name="itemClick"
+            type="com.hongslab.chating_memo.adapter.OnGlobalAdapterClickListener" />
+
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/systemGroupedBackground">
+
+        <com.hongslab.chating_memo.utils.UnderlinedLinearLayout
+            android:id="@+id/tool_bar"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_alignParentTop="true"
+            android:background="@color/secondarySystemGroupedBackground"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            app:underlineStrokeWidth="0px">
+
+            <com.hongslab.chating_memo.utils.KyhImageButton
+                android:id="@+id/btn_back"
+                android:layout_width="50dp"
+                android:layout_height="match_parent"
+                android:onClick="@{click::onClick}"
+                android:scaleType="center"
+                android:src="@drawable/ic_arrow_left"
+                app:tint="@color/label" />
+
+
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="0dp"
+                android:layout_height="36dp"
+                android:layout_marginRight="10dp"
+                android:layout_weight="1"
+                app:cardBackgroundColor="@color/secondarySystemBackground"
+                app:cardCornerRadius="6dp"
+                app:cardElevation="0dp"
+                app:strokeColor="@color/label"
+                app:strokeWidth="0px">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <ImageView
+                        android:layout_width="36dp"
+                        android:layout_height="36dp"
+                        android:padding="8dp"
+                        android:scaleType="fitCenter"
+                        android:src="@drawable/ic_magnifying_glass"
+                        app:tint="@color/label" />
+
+                    <EditText
+                        android:id="@+id/et_query"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:background="@null"
+                        android:hint="검색어를 입력 해 주세요."
+                        android:imeOptions="actionSearch"
+                        android:inputType="text"
+                        android:textColor="@color/label"
+                        android:textColorHint="@color/systemGray"
+                        android:textSize="14sp" />
+
+                    <com.hongslab.chating_memo.utils.KyhImageButton
+                        android:id="@+id/btn_clear"
+                        android:layout_width="36dp"
+                        android:layout_height="36dp"
+                        android:onClick="@{click::onClick}"
+                        android:padding="8dp"
+                        android:scaleType="fitCenter"
+                        android:src="@drawable/ic_x"
+                        android:tint="@color/label"
+                        android:visibility="invisible" />
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+
+        </com.hongslab.chating_memo.utils.UnderlinedLinearLayout>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recycler_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/ll_merge_btn_box"
+            android:layout_below="@id/tool_bar"
+            android:orientation="vertical"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
+
+
+        <LinearLayout
+            android:id="@+id/ll_merge_btn_box"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_above="@+id/ad_bottom_container"
+            android:orientation="horizontal"
+            android:visibility="gone">
+
+            <com.hongslab.chating_memo.utils.KyhTextButton
+                android:id="@+id/btn_merge_memo_cancel"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="2"
+                android:background="@color/systemRed"
+                android:gravity="center"
+                android:onClick="@{click::onClick}"
+                android:text="취소"
+                android:textColor="@color/white"
+                android:textSize="16sp"
+                app:radius="0" />
+
+            <com.hongslab.chating_memo.utils.KyhTextButton
+                android:id="@+id/btn_merge_memo"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="8"
+                android:background="@color/systemBlue"
+                android:gravity="center"
+                android:onClick="@{click::onClick}"
+                android:text="체크된 메모 합치기"
+                android:textColor="@color/white"
+                android:textSize="16sp"
+                app:radius="0" />
+
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:gravity="center"
+            android:text="검색된 메시지가 없어요."
+            android:textColor="@color/systemGray"
+            android:visibility="@{vm.items.size() == 0 ? View.VISIBLE : View.GONE}" />
+
+        <FrameLayout
+            android:id="@+id/ad_bottom_container"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true" />
+
+    </RelativeLayout>
+
+
+</layout>

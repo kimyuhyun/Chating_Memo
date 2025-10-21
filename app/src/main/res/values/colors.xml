@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="accent">#f6481a</color>
+    <!--    <color name="accent">#9C27B0</color>-->
+
+
+    <color name="label">#000000</color>
+    <color name="systemRed">#ff3b30</color>
+    <color name="systemBlue">#007aff</color>
+    <color name="systemGreen">#34c759</color>
+    <color name="systemOrange">#ff9500</color>
+    <color name="systemTeal">#30b0c7</color>
+    <color name="systemFill">#e4e4e6</color>
+    <color name="systemPink">#ff2d55</color>
+    <color name="systemCyan">#32ade6</color>
+    <color name="systemMint">#00c7be</color>
+    <color name="systemBrown">#a2845e</color>
+    <color name="systemIndigo">#5856d6</color>
+    <color name="systemPurple">#af52de</color>
+    <color name="systemYellow">#ffcc00</color>
+    <color name="systemGray">#8e8e93</color>
+    <color name="systemGray2">#aeaeb2</color>
+    <color name="systemGray3">#c7c7cc</color>
+    <color name="systemGray4">#d1d1d6</color>
+    <color name="systemGray5">#e5e5ea</color>
+    <color name="systemGray6">#f2f2f7</color>
+    <color name="systemBackground">#ffffff</color>
+    <color name="secondarySystemBackground">#f2f2f7</color>
+    <color name="tertiarySystemBackground">#ffffff</color>
+    <color name="systemGroupedBackground">#f2f2f7</color>
+    <color name="secondarySystemGroupedBackground">#ffffff</color>
+    <color name="tertiarySystemGroupedBackground">#f2f2f7</color>
+
+    <color name="chatMeBubbleBackground">#ffeb33</color>
+    <color name="chatMeReplyBubbleBackground">#D0E8FF</color>
+    <color name="chatSystemBackground">#e5e5ea</color>
+    <color name="chatSmallBubbleBackground">#50000000</color>
+    <color name="chatNoticeButtonBackground">#f0f0f0</color>
+</resources>
