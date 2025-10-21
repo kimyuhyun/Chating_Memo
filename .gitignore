@@ -46,7 +46,7 @@ signing.properties
 .navigation/
 
 # Android Studio captures folder
-captures/
+screenshot/
 
 # IntelliJ
 *.iml
