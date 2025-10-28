@@ -23,7 +23,7 @@ class IosInputDialog(
     private val isTitleCenter: Boolean,
     private val defaultValue: String,
     private val callBack: (String) -> Unit
-) : Dialog(context), View.OnClickListener {
+) : Dialog(context, R.style.IosDialogTheme), View.OnClickListener {
     private lateinit var binding: IosInputDialogBinding
 
     override fun onClick(v: View?) {

@@ -1,36 +1,26 @@
 package com.hongslab.chating_memo.views
 
-import android.Manifest
 import android.app.Activity
 import android.content.Intent
-import android.net.Uri
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
-import android.speech.RecognizerIntent
-import android.util.TypedValue
 import android.view.View
-import android.view.ViewGroup
 import android.widget.Toast
 import androidx.activity.addCallback
-import androidx.activity.result.contract.ActivityResultContracts
 import androidx.activity.viewModels
 import androidx.core.content.ContextCompat
 import androidx.core.view.WindowInsetsControllerCompat
 import androidx.core.view.isVisible
-import androidx.core.widget.addTextChangedListener
 import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.gun0912.tedpermission.coroutine.TedPermission
 import com.hongslab.chating_memo.R
 import com.hongslab.chating_memo.adapter.ChatMessageAdapter
 import com.hongslab.chating_memo.adapter.ChatMessageAdapter.Companion.VIEW_TYPE_IMAGE
 import com.hongslab.chating_memo.adapter.ChatMessageAdapter.Companion.VIEW_TYPE_TEXT
 import com.hongslab.chating_memo.adapter.OnGlobalAdapterClickListener
 import com.hongslab.chating_memo.databinding.ActivityChatMessageBinding
-import com.hongslab.chating_memo.dialog.EmojiDialog
 import com.hongslab.chating_memo.dialog.EmojiMapper
 import com.hongslab.chating_memo.dialog.EmojiPopup
 import com.hongslab.chating_memo.dialog.ImageActionDialog
@@ -39,20 +29,16 @@ import com.hongslab.chating_memo.dialog.IosInputDialog
 import com.hongslab.chating_memo.dialog.TextActionDialog
 import com.hongslab.chating_memo.manager.CloudinaryDeleter
 import com.hongslab.chating_memo.manager.CloudinaryUploader
-import com.hongslab.chating_memo.manager.CloudinaryUtils
 import com.hongslab.chating_memo.manager.UploadResult
 import com.hongslab.chating_memo.models.ChatMessageVO
-import com.hongslab.chating_memo.models.ChatRoomVO
 import com.hongslab.chating_memo.models.ImageVO
 import com.hongslab.chating_memo.utils.AdUtils
 import com.hongslab.chating_memo.utils.Dlog
 import com.hongslab.chating_memo.utils.MyUtils
 import com.hongslab.chating_memo.utils.startActivityForResult2
 import com.hongslab.chating_memo.viewmodels.ChatMessageViewModel
-import com.hongslab.chating_memo.viewmodels.ChatRoomViewModel
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.GlobalScope
-import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 
 class ChatMessageAC : BaseAC(TransitionMode.HORIZON), View.OnClickListener {
@@ -271,6 +257,11 @@ class ChatMessageAC : BaseAC(TransitionMode.HORIZON), View.OnClickListener {
         }
     }
 
+    override fun onResume() {
+        super.onResume()
+        MyUtils.setKeyboard(false, binding.etMessage)
+    }
+
     private fun setupView() {
         window.apply {
             if (MyUtils.isDarkModeApply(this@ChatMessageAC)) {
@@ -313,6 +304,7 @@ class ChatMessageAC : BaseAC(TransitionMode.HORIZON), View.OnClickListener {
                 lastMessage = items[items.size - 1].message
                 lastIsCompleted = items[items.size - 1].isCompleted
             }
+
 
             chatMessageAdapter.submitList(ArrayList(items)) {
                 Dlog.d("chatMessageAdapter.submitList completed")
@@ -406,6 +398,7 @@ class ChatMessageAC : BaseAC(TransitionMode.HORIZON), View.OnClickListener {
                 isKeyboardVisible = keyboardCurrentlyVisible
 
                 if (keyboardCurrentlyVisible) {
+
                     // 키보드가 올라옴
                     if (emojiPopup?.isShowing == true) {
                         emojiPopup?.dismiss()
@@ -478,6 +471,17 @@ class ChatMessageAC : BaseAC(TransitionMode.HORIZON), View.OnClickListener {
                 "merge_memo" -> {
                     chatMessageAdapter.toggleCheckBoxVisibility(isShow = true)
                     binding.llMergeBtnBox.visibility = View.VISIBLE
+                }
+
+                "modify" -> {
+                    IosInputDialog(this@ChatMessageAC, "수정", true, item.message) { str ->
+                        if (str != "") {
+                            if (str != item.message) {
+                                vm.updateMessage(item.idx, str)
+                            }
+                        }
+
+                    }.show()
                 }
 
                 "delete" -> {

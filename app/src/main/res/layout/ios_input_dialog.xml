@@ -62,7 +62,7 @@
                         android:maxLines="10"
                         android:padding="10dp"
                         android:textColor="#000"
-                        android:textCursorDrawable="@null"
+                        android:textCursorDrawable="@color/black"
                         android:textSize="14sp" />
                 </com.google.android.material.card.MaterialCardView>
 

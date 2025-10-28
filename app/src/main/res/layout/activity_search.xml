@@ -61,8 +61,10 @@
                     android:layout_height="match_parent">
 
                     <ImageView
+                        android:id="@+id/btn_search"
                         android:layout_width="36dp"
                         android:layout_height="36dp"
+                        android:onClick="@{click::onClick}"
                         android:padding="8dp"
                         android:scaleType="fitCenter"
                         android:src="@drawable/ic_magnifying_glass"
@@ -79,7 +81,7 @@
                         android:inputType="text"
                         android:textColor="@color/label"
                         android:textColorHint="@color/systemGray"
-                        android:textSize="14sp" />
+                        android:textSize="16sp" />
 
                     <com.hongslab.chating_memo.utils.KyhImageButton
                         android:id="@+id/btn_clear"

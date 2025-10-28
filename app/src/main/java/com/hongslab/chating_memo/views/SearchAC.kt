@@ -50,6 +50,17 @@ class SearchAC : BaseAC(TransitionMode.HORIZON), View.OnClickListener {
                 MyUtils.setKeyboard(true, binding.etQuery)
             }
 
+            R.id.btn_search -> {
+                val query = binding.etQuery.text.toString().trim()
+                if (query.isEmpty()) {
+                    MyUtils.myToast("검색어를 입력해 주세요.")
+                    return
+                }
+                chatMessageAdapter.setSearchText(query)
+                vm.fetch(cateIdx, query)
+                MyUtils.setKeyboard(false, binding.etQuery)
+            }
+
             R.id.btn_merge_memo -> {
                 vm.mergeAndSendMessages(cateIdx)
                 chatMessageAdapter.toggleCheckBoxVisibility(isShow = false)

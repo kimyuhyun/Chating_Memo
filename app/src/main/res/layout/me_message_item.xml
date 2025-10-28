@@ -13,104 +13,122 @@
 
     </data>
 
-
-    <LinearLayout
+    <FrameLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_gravity="right"
-        android:background="@color/systemGroupedBackground"
-        android:gravity="bottom"
-        android:orientation="horizontal"
-        android:paddingVertical="10dp"
-        android:paddingEnd="6dp">
+        android:layout_height="wrap_content">
 
-        <!-- 모어 버튼 -->
-        <com.hongslab.chating_memo.utils.KyhImageButton
-            android:id="@+id/btn_check_box"
-            android:layout_width="26dp"
-            android:layout_height="26dp"
-            android:layout_gravity="center_vertical"
-            android:layout_marginStart="20dp"
-            android:scaleType="fitCenter"
-            android:src="@drawable/ic_uncheck"
-            android:tint="@color/label"
-            app:radius="99" />
 
-        <!-- 갭 -->
-        <FrameLayout
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1" />
-
-        <!-- 시간 -->
         <LinearLayout
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginStart="20dp"
-            android:layout_marginEnd="4dp"
-            android:gravity="right"
-            android:orientation="vertical">
+            android:layout_gravity="right"
+            android:background="@color/systemGroupedBackground"
+            android:gravity="bottom"
+            android:orientation="horizontal"
+            android:paddingVertical="10dp"
+            android:paddingEnd="6dp">
 
-            <TextView
-                android:id="@+id/tv_time_text"
+
+            <!-- 갭 -->
+            <FrameLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1" />
+
+            <!-- 시간 -->
+            <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="오후 11:00"
-                android:textColor="@color/systemGray"
-                android:textSize="9sp" />
-        </LinearLayout>
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="4dp"
+                android:gravity="right"
+                android:orientation="vertical">
 
-        <!-- 메세지 -->
-        <FrameLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content">
-
-            <ImageView
-                android:id="@+id/iv_message_tail"
-                android:layout_width="22dp"
-                android:layout_height="22dp"
-                android:layout_gravity="right"
-                android:src="@drawable/me_bubble_tail" />
-
-            <androidx.cardview.widget.CardView
-                android:id="@+id/cv_message_box"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginEnd="2dp"
-                android:clickable="true"
-                android:focusable="true"
-                android:foreground="?android:attr/selectableItemBackgroundBorderless"
-                android:orientation="vertical"
-                app:cardBackgroundColor="@color/chatMeBubbleBackground"
-                app:cardCornerRadius="16dp"
-                app:cardElevation="0dp">
-
-                <LinearLayout
+                <TextView
+                    android:id="@+id/tv_time_text"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:orientation="horizontal"
-                    android:paddingVertical="7dp"
-                    android:paddingLeft="12dp"
-                    android:paddingRight="12dp">
+                    android:text="오후 11:00"
+                    android:textColor="@color/systemGray"
+                    android:textSize="9sp" />
+            </LinearLayout>
 
-                    <TextView
-                        android:id="@+id/tv_message"
+            <!-- 메세지 -->
+            <FrameLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <ImageView
+                    android:id="@+id/iv_message_tail"
+                    android:layout_width="22dp"
+                    android:layout_height="22dp"
+                    android:layout_gravity="right"
+                    android:src="@drawable/me_bubble_tail" />
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/cv_message_box"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="2dp"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:foreground="?android:attr/selectableItemBackgroundBorderless"
+                    android:orientation="vertical"
+                    app:cardBackgroundColor="@color/chatMeBubbleBackground"
+                    app:cardCornerRadius="16dp"
+                    app:cardElevation="0dp">
+
+                    <LinearLayout
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:lineSpacingExtra="4dp"
-                        android:maxWidth="200dp"
-                        android:text="안녕하세요안녕하세요안녕하세요안녕하세요안녕하세요"
-                        android:textColor="@color/black"
-                        android:textSize="15sp" />
-                </LinearLayout>
+                        android:orientation="horizontal"
+                        android:paddingVertical="7dp"
+                        android:paddingLeft="12dp"
+                        android:paddingRight="12dp">
+
+                        <TextView
+                            android:id="@+id/tv_message"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:lineSpacingExtra="4dp"
+                            android:maxWidth="200dp"
+                            android:text="안녕하세요안녕하세요안녕하세요안녕하세요안녕하세요"
+                            android:textColor="@color/black"
+                            android:textSize="15sp" />
+                    </LinearLayout>
 
 
-            </androidx.cardview.widget.CardView>
+                </androidx.cardview.widget.CardView>
 
 
-        </FrameLayout>
+            </FrameLayout>
 
 
-    </LinearLayout>
+        </LinearLayout>
+
+
+        <!-- 체크박스영역을 전체 잡기위해서.. -->
+        <LinearLayout
+            android:id="@+id/ll_check_box_area"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:clickable="true"
+            android:focusable="true"
+            android:foreground="?android:attr/selectableItemBackgroundBorderless"
+            android:gravity="start">
+
+            <com.hongslab.chating_memo.utils.KyhImageButton
+                android:id="@+id/btn_check_box"
+                android:layout_width="26dp"
+                android:layout_height="26dp"
+                android:layout_gravity="center_vertical"
+                android:layout_marginStart="20dp"
+                android:scaleType="fitCenter"
+                android:src="@drawable/ic_uncheck"
+                android:tint="@color/label"
+                app:radius="99" />
+        </LinearLayout>
+
+    </FrameLayout>
 
 </layout>

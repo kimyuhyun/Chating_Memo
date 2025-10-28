@@ -62,6 +62,11 @@ class TextActionDialog(
                 dismiss()
             }
 
+            R.id.btn_modify -> {
+                callBack("modify")
+                dismiss()
+            }
+
             R.id.btn_delete -> {
                 callBack("delete")
                 dismiss()
@@ -106,6 +111,7 @@ class TextActionDialog(
             binding.btnNotice.visibility = View.GONE
             binding.btnCompleted.visibility = View.GONE
             binding.btnCompletedCancel.visibility = View.GONE
+            binding.btnModify.visibility = View.GONE
 //            binding.btnDelete.visibility = View.GONE
         } else if (context is ChatMessageAC) {
             Dlog.d("ChatMessageAC 분기 진입")

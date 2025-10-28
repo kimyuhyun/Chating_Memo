@@ -113,6 +113,17 @@
                 android:textSize="16sp"
                 app:radius="0" />
 
+            <com.hongslab.chating_memo.utils.KyhTextButton
+                android:id="@+id/btn_modify"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:gravity="center"
+                android:onClick="@{click::onClick}"
+                android:paddingHorizontal="20dp"
+                android:text="수정"
+                android:textColor="@color/systemBlue"
+                android:textSize="16sp"
+                app:radius="0" />
 
             <com.hongslab.chating_memo.utils.KyhTextButton
                 android:id="@+id/btn_delete"

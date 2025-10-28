@@ -65,13 +65,10 @@ class MainAC : BaseAC(TransitionMode.HORIZON), View.OnClickListener {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        val a = MyUtils.encrypt(BuildConfig.API_SECRET)
-        val b = MyUtils.decrypt(a)
-        Dlog.d(a)
-        Dlog.d(b)
-
-
-
+//        val secret = MyUtils.decrypt(BuildConfig.API_SECRET)
+//        val key = MyUtils.decrypt(BuildConfig.API_KEY)
+//        Dlog.d(secret)
+//        Dlog.d(key)
 
         binding.adExitLayout.click = this
 

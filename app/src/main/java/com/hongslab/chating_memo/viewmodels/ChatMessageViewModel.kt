@@ -18,6 +18,7 @@ import com.hongslab.chating_memo.utils.SPre
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.GlobalScope
+import kotlinx.coroutines.NonCancellable.isCompleted
 import kotlinx.coroutines.launch
 
 import javax.inject.Inject
@@ -121,6 +122,41 @@ class ChatMessageViewModel @Inject constructor() : ViewModel() {
 
                     uiScrollPosition = newList.size - 1
                     _items.postValue(newList)
+                }
+            }
+        } catch (e: Exception) {
+            e.printStackTrace()
+        }
+    }
+
+    fun updateMessage(idx: String, message: String) {
+        try {
+            viewModelScope.launch {
+                val encodedMessage = EmojiMapper.encodeEmojis(message)
+
+                val hashMap = HashMap<String, String>().apply {
+                    put("table", "CHAT_MEMO_MSG_tbl")
+                    put("idx", idx)
+                    put("message", encodedMessage)
+                }
+
+                val result = cudRepository.write(hashMap)     // insertId: 0 리턴함
+                if (result == 0) {
+                    val currentList = items.value ?: arrayListOf()
+                    // idx로 실제 위치 찾기 (더 안전)
+                    val actualPos = currentList.indexOfFirst { it.idx == idx }
+                    if (actualPos == -1) {
+                        return@launch
+                    }
+
+                    val item = currentList[actualPos]
+                    val newItem = item.copy(uid = System.nanoTime(), message = message)
+                    val updatedList = ArrayList(currentList)
+                    updatedList[actualPos] = newItem
+                    val newList = ArrayList(updatedList)
+                    _items.postValue(newList)
+
+                    uiScrollPosition = -1
                 }
             }
         } catch (e: Exception) {

@@ -32,8 +32,8 @@ android {
         applicationId = "com.hongslab.chating_memo"
         minSdk = 26
         targetSdk = 36
-        versionCode = 4
-        versionName = "1.4"
+        versionCode = 5
+        versionName = "1.5"
         multiDexEnabled = true
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
 
@@ -99,7 +99,7 @@ dependencies {
     androidTestImplementation("androidx.test.espresso:espresso-core:3.7.0")
 
     //firebase
-    implementation(platform("com.google.firebase:firebase-bom:34.3.0"))
+    implementation(platform("com.google.firebase:firebase-bom:34.4.0"))
     implementation("com.google.firebase:firebase-analytics")
     implementation("com.google.firebase:firebase-crashlytics")
 
@@ -130,8 +130,8 @@ dependencies {
 
     // 이미지 업로드
     implementation("com.cloudinary:cloudinary-android:3.1.2")
-    implementation("com.squareup.okhttp3:okhttp:5.1.0")
-    implementation("com.squareup.okhttp3:logging-interceptor:5.1.0") // 로깅용 (선택사항)
+    implementation("com.squareup.okhttp3:okhttp:5.2.1")
+    implementation("com.squareup.okhttp3:logging-interceptor:5.2.1") // 로깅용 (선택사항)
 
     // 이미지 확대 축소
     implementation("com.davemorrissey.labs:subsampling-scale-image-view:3.10.0")
@@ -142,6 +142,9 @@ dependencies {
     // TedPermission Coroutine
     implementation("io.github.ParkSangGwon:tedpermission-coroutine:3.4.2")
 
+    // grid layout
+    implementation("androidx.gridlayout:gridlayout:1.1.0")
+
     //ads
-    implementation("com.google.android.gms:play-services-ads:24.6.0")
+    implementation("com.google.android.gms:play-services-ads:24.7.0")
 }

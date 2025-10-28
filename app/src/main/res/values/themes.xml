@@ -39,5 +39,9 @@
         <item name="android:windowExitAnimation">@anim/scale_down</item>
     </style>
 
+    <style name="IosDialogTheme" parent="Theme.MaterialComponents.Light.Dialog">
+        <item name="colorControlActivated">#000000</item>
+        <item name="colorAccent">#000000</item>
+    </style>
 
 </resources>
